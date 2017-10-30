@@ -9,20 +9,35 @@ const List = () => (
   <div>
     {
       users.map(name => (
-        <HashRoute id={name.toLowerCase()} key={name} >
-          <User name={name} />
-        </HashRoute>
+        <HashRoute
+          id={name}
+          key={name}
+          render={({id, active}) => <User name={name} id={id} active={active} />}
+          />
       ))
     }
   </div>
 )
 
 const Links = () => (
-  <div>
+  <nav>
     {
-      users.map(name => <Link to={`/#${name.toLowerCase()}`} key={name} >{name}</Link>)
+      users.map(name => (
+        <div key={name} >
+          <Link to={`/users#${name}`} >{name}</Link>
+        </div>
+      ))
     }
-  </div>
+    <style jsx>{`
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      nav div {
+        margin: 1em;
+      }
+    `}</style>
+  </nav>
 )
 
 export default () => (

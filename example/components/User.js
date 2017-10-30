@@ -1,7 +1,7 @@
 import React from 'react'
 
-const User = ({name}) => (
-  <div className='user' >
+const User = ({name, id, active}) => (
+  <div className={`user ${active ? 'active' : ''}`} id={id} >
     <h1>{name}</h1>
     <style jsx>{`
       .user {
@@ -11,6 +11,10 @@ const User = ({name}) => (
       .user:nth-of-type(odd) {
         color: white;
         background: black;
+      }
+      .user.active {
+        text-decoration: underline;
+        text-decoration-color: #ff00c5;
       }
       .user:nth-of-type(even) {
         color: black;
