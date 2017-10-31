@@ -46,3 +46,17 @@ const scroll = (node, offset) = {}
 ```
 
 If you want to have animations etc.
+
+# Development
+
+Start watching and building the lib:
+
+```sh
+$ npm i && npm run dev
+```
+
+Build and start the example website with hot-reloading:
+
+```sh
+$ npm run dev
+```
