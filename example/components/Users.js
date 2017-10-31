@@ -24,7 +24,7 @@ const Links = () => (
     {
       users.map(name => (
         <div key={name} >
-          <Link to={`/users#${name}`} >{name}</Link>
+          <Link to={`/#${name}`} >{name}</Link>
         </div>
       ))
     }

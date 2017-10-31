@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter, Route, Switch, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import Users from '../components/Users'
 
 export default class App extends React.Component {
@@ -14,11 +14,11 @@ export default class App extends React.Component {
       return null
     }
     return (
-      <HashRouter>
+      <Router>
         <div>
           <Switch>
-            <Route path='/users' component={Users} />
-            <Redirect to='/users' />
+            <Route path='/' component={Users} />
+            <Redirect to='/' />
           </Switch>
           <style jsx global>{`
             body {
@@ -26,7 +26,7 @@ export default class App extends React.Component {
             }
           `}</style>
         </div>
-      </HashRouter>
+      </Router>
     )
   }
 }
