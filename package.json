@@ -1,6 +1,6 @@
 {
   "name": "react-router-hash-route",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Enable hash / id based routes for react-router v4",
   "main": "lib/index.js",
   "scripts": {
