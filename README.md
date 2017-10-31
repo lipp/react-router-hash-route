@@ -1,9 +1,15 @@
 # react-router-hash-route
 Enable hash / id based routes with react router.
 
-Try out the [example](https://react-router-hash-route).
+Check the [example](https://react-router-hash-route.now.sh).
 
 The `HashRoute` component scrolls to the "wrapped" element after `componentDidMount` or on route change when the hash / id matches.
+
+# Install
+
+```sh
+$ npm i react-router-hash-route
+```
 
 # Usage
 
