@@ -22,7 +22,6 @@ class HashRoute extends React.PureComponent {
   }
 
   componentWillReceiveProps ({location, history}) {
-    console.log('asd', this.props)
     const {location: prevLocation, offset, scroll, id} = this.props
     if (location === prevLocation) {
       return
