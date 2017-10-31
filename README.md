@@ -53,6 +53,18 @@ const scroll = (node, offset) = {}
 
 If you want to have animations etc.
 
+# Limitations
+
+## BrowserRouter
+
+When a certain hash is active (e.g. "users#foo") than navigating AGAIN to the same route (e.g. by clicking an anchor link to "users#foo") will JUMP to element #foo into view. The actual `scroll` function will not be invoked. Jumping to the hash element is default browser behaviour. There is no actual route change and thus `HashRoute` has
+no way to figure out that it should scroll the respective element into view.
+
+## with HashRouter
+
+When a certain hash is active (e.g. "users#foo") than navigating AGAIN to the same route (e.g. by clicking an anchor link to "users#foo") will NOT scroll element #foo into view. This is because there is no actual route change and thus `HashRoute` has
+no way to figure out that it should scroll the respective element into view.
+
 # Development
 
 Start watching and building the lib:
