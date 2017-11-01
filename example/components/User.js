@@ -6,7 +6,7 @@ const User = ({name, id, active}) => (
     <style jsx>{`
       .user {
         height: 40vh;
-        font-size: 10vh;
+        font-size: 6vw;
       }
       .user:nth-of-type(odd) {
         color: white;
@@ -14,7 +14,6 @@ const User = ({name, id, active}) => (
       }
       .user.active {
         text-decoration: underline;
-        text-decoration-color: #ff00c5;
       }
       .user:nth-of-type(even) {
         color: black;

@@ -32,6 +32,7 @@ const Links = () => (
       nav {
         display: flex;
         flex-wrap: wrap;
+        border-bottom: 10px solid #ff00c5;
       }
       nav div {
         margin: 1em;
