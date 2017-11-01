@@ -5,6 +5,8 @@ Check the [example](https://react-router-hash-route.now.sh).
 
 The `HashRoute` component scrolls to the target element after `componentDidMount` or on route change when the hash / id matches. The target element is NOT wrapped with `<div id='foo' />`. Thus the element must render its `id` properly.
 
+`HashRoute` is compatible with all means of `react-router-dom` to navigate (`Link`, `NavLink`, etc).
+
 # Install
 
 ```sh
@@ -16,8 +18,20 @@ $ npm i react-router-hash-route
 Given the component `Foo` (Your component MUST render the `id` prop):
 
 ```
+import {Link} from 'react-router-dom'
+
 const Foo = ({id}) => <div id={id}>Foo</div>
+
+const App = () => (
+  <div>
+    <nav>
+      <Link to='/#foo'>Foo</Link>
+    </nav>
+  </div>
+)
 ```
+
+Use `HashRoute` somewhere inside App. You must provide either `render` or `component` prop (similar to `Route`).
 
 ## `render` prop
 
