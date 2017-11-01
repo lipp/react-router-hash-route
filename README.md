@@ -55,15 +55,20 @@ If you want to have animations etc.
 
 # Limitations
 
-## BrowserRouter
+## Scenario
 
-When a certain hash is active (e.g. "users#foo") than navigating AGAIN to the same route (e.g. by clicking an anchor link to "users#foo") will JUMP to element #foo into view. The actual `scroll` function will not be invoked. Jumping to the hash element is default browser behaviour. There is no actual route change and thus `HashRoute` has
-no way to figure out that it should scroll the respective element into view.
+ - active route is "/#foo", #foo is in view
+ - user scrolls
+ - user clicks link to "/#foo" (e.g. from top nav)
+ 
+## Expected Behaviour
 
-## with HashRouter
+ - HashRoute calls `scroll` prop (-> #foo scrolls into view)
+ 
+## Actual Behaviour
 
-When a certain hash is active (e.g. "users#foo") than navigating AGAIN to the same route (e.g. by clicking an anchor link to "users#foo") will NOT scroll element #foo into view. This is because there is no actual route change and thus `HashRoute` has
-no way to figure out that it should scroll the respective element into view.
+- with `BrowserRouter`: `scroll` prop is not invoked. Browser "jumps" to #foo.
+- with `HashRouter`: `scroll` prop is not invoked. Scroll position remains onchanged. 
 
 # Development
 
@@ -76,5 +81,6 @@ $ npm i && npm run dev
 Build and start the example website with hot-reloading:
 
 ```sh
-$ npm run dev
+$ cd example
+$ npm i && npm run dev
 ```
