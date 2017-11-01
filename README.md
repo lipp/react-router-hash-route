@@ -3,7 +3,7 @@ Enable hash / id based routes with react router.
 
 Check the [example](https://react-router-hash-route.now.sh).
 
-The `HashRoute` component scrolls to the "wrapped" element after `componentDidMount` or on route change when the hash / id matches.
+The `HashRoute` component scrolls to the target element after `componentDidMount` or on route change when the hash / id matches. The target element is NOT wrapped with `<div id='foo' />`. Thus the element must render its `id` properly.
 
 # Install
 
@@ -13,7 +13,7 @@ $ npm i react-router-hash-route
 
 # Usage
 
-Given the component `Foo` (Your component MUST render the id prop):
+Given the component `Foo` (Your component MUST render the `id` prop):
 
 ```
 const Foo = ({id}) => <div id={id}>Foo</div>
@@ -22,6 +22,8 @@ const Foo = ({id}) => <div id={id}>Foo</div>
 ## `render` prop
 
 ```js
+import HashRoute from 'react-router-hash-route'
+
 <HashRoute 
   id='foo'
   render={({id}) => <Foo id={id} />} 
